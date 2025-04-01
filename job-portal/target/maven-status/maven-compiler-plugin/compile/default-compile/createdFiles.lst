@@ -1,0 +1,8 @@
+com/jobportal/repositories/UserRepository.class
+com/jobportal/services/JobService.class
+com/jobportal/services/JobServiceImpl.class
+com/jobportal/config/DataLoader.class
+com/jobportal/repositories/JobRepository.class
+com/jobportal/models/User.class
+com/jobportal/models/User$Role.class
+com/jobportal/models/Job.class
