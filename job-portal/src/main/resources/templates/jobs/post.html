@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="layout :: ~{::content}">
+<head>
+    <title>Post a Job - Job Portal</title>
+</head>
+<body>
+    <div th:fragment="content" class="max-w-2xl mx-auto bg-white rounded-xl shadow-md overflow-hidden p-8">
+        <h1 class="text-2xl font-bold text-gray-800 mb-6">Post a New Job</h1>
+        <form th:action="@{/jobs/post}" th:object="${job}" method="post">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
+                    Job Title
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                       type="text" id="title" th:field="*{title}" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="company">
+                    Company
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                       type="text" id="company" th:field="*{company}" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="location">
+                    Location
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                       type="text" id="location" th:field="*{location}" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="salary">
+                    Salary (USD)
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                       type="number" id="salary" th:field="*{salary}" min="0" step="0.01">
+            </div>
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="description">
+                    Job Description
+                </label>
+                <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                          id="description" th:field="*{description}" rows="5" required></textarea>
+            </div>
+            <div class="flex items-center justify-end">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+                        type="submit">
+                    Post Job
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
